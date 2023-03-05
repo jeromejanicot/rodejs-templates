@@ -1,0 +1,47 @@
+{
+  "name": "rodejs-solid",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Solidjs with vite",
+  "type": "module",
+  "engine": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "dev": "vite",
+    "clean": "rm -rf dist .turbo node_modules",
+    "start": "node dist/index.js",
+    "lint": "eslint . --report-unused-disable-directives",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --write --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json} --ignore-path ../.gitignore --ignore-unknown --no-error-on-unmatched-pattern",
+    "format:check": "pnpm format --check",
+    "release": "changeset version",
+    "pub:beta": "pnpm build && npm publish --tag beta",
+    "pub:next": "pnpm build && npm publish --tag next",
+    "pub:release": "pnpm build && npm publish"
+  },
+  "dependencies": {
+    "solid-js": "^1.6.2",
+    "clsx": "^1.2.1",
+  },
+  "devDependencies": {
+    "@nabla/vite-plugin-eslint": "^1.5.0",
+    "@types/node": "^18.11.0",
+    "@types/eslint": "^8.21.1",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "postcss": "^8.4.21",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4",
+    "vite": "^4.1.1"
+  }
+}
